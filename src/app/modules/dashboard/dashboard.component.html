@@ -1,0 +1,198 @@
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+    <div fxFlex="50">
+        <form action="#">
+            <label for="cars">USER</label>
+            <br>
+            <select name="cars" id="cars">
+              <option value="all">All</option>
+              <!-- <option value="saab">Saab</option>
+              <option value="opel">Opel</option>
+              <option value="audi">Audi</option> -->
+            </select>
+            <br><br>
+          </form>
+    </div>
+    <div fxFlex="50">
+        <form action="#">
+            <label for="cars">PRIORITY</label>
+            <br>
+            <select name="cars" id="cars">
+                <option value="all">All</option>
+                <!-- <option value="saab">Saab</option>
+                <option value="opel">Opel</option>
+                <option value="audi">Audi</option> -->
+              </select>
+            <br><br>
+          </form>
+    </div>
+    <div fxFlex="50">
+        <form action="/action_page.php">
+            <label for="cars">STATUS</label>
+            <br>
+            <select name="cars" id="cars">
+                <option value="all">All</option>
+                <!-- <option value="saab">Saab</option>
+                <option value="opel">Opel</option>
+                <option value="audi">Audi</option> -->
+              </select>
+            <br><br>
+          </form>
+    </div>      
+    <div fxFlex="50">
+        <form action="/action_page.php">
+            <label for="cars">DATE</label>
+            <br>
+            <select name="cars" id="cars">
+                <option value="all">All</option>
+                <!-- <option value="saab">Saab</option>
+                <option value="opel">Opel</option>
+                <option value="audi">Audi</option> -->
+              </select>
+            <br><br>
+          </form>
+    </div>   
+    <div fxFlex="50">
+        <form action="/action_page.php">
+            <label for="cars">LOCATION</label>
+            <br>
+            <select name="cars" id="cars">
+                <option value="all">All</option>
+                <!-- <option value="saab">Saab</option>
+                <option value="opel">Opel</option>
+                <option value="audi">Audi</option> -->
+              </select>
+            <br><br>
+          </form>
+    </div>     
+    <input class="button" type="submit" value="Submit">
+</div>  
+
+
+<br>
+
+<mat-divider></mat-divider>
+
+<br>
+
+
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+    <div fxFlex="50">
+        <label for="cars">WO-STATUS</label>
+        <app-widget-pie [data]="pieChart"></app-widget-pie>
+    </div>
+    <div fxFlex="50">
+        <label for="cars">WO-PRIORITY</label>
+        <app-widget-pie [data]="pieChart"></app-widget-pie>
+    </div>
+</div>  
+
+
+<br>
+
+<mat-divider></mat-divider>
+
+<br>
+
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+    <div fxFlex="50">
+        <label for="cars">CREATED VS COMPLETED</label>
+        <app-widget-area [data]="bigChart" ></app-widget-area>
+    </div>
+    <div fxFlex="50">
+        <label for="cars">NOTIFICATION</label>
+        <app-widget-pie [data]="pieChart"></app-widget-pie>
+    </div>
+</div>  
+
+
+<br>
+
+<mat-divider></mat-divider>
+
+<br>
+
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+    <div fxFlex="50">
+        <label for="cars">ON-TIME VS OVERDUE</label>
+        <app-widget-pie [data]="pieChart"></app-widget-pie>
+    </div>
+    <div>
+        <label fxFlex="50" for="cars">AVERAGE TIME SPENT</label>
+        <app-widget-area [data]="bigChart"></app-widget-area>
+    </div>
+</div>  
+
+
+<br>
+
+<mat-divider></mat-divider>
+
+<br>
+
+
+<!-- 
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
+    <mat-card fxFlex="25">
+        <app-widget-card label="New Users" total="12k" percentage="50" [data]="cards"></app-widget-card>
+    </mat-card>
+    <mat-card fxFlex="25">
+        <app-widget-card label="Users retention" total="10k" percentage="40" [data]="cards"></app-widget-card>
+    </mat-card>
+    <mat-card fxFlex="25">
+        <app-widget-card label="Users engagement" total="8k" percentage="30" [data]="cards"></app-widget-card>
+    </mat-card>
+    <mat-card fxFlex="25">
+        <app-widget-card label="Referral" total="6k" percentage="20" [data]="cards"></app-widget-card>
+    </mat-card>
+</div> -->
+
+<br>
+
+<mat-divider></mat-divider>
+
+<br>
+
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+    <div fxFlex="100">
+        <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource">
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="position">
+                    <th mat-header-cell *matHeaderCellDef> S.No. </th>
+                    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Oder No. </th>
+                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="weight">
+                    <th mat-header-cell *matHeaderCellDef> Type </th>
+                    <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="symbol">
+                    <th mat-header-cell *matHeaderCellDef> Area </th>
+                    <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+                </ng-container>
+
+                
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
+        </div>
+
+    </div>
+</div>
+
+<br>
+<br>
+<br>
